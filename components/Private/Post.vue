@@ -1,15 +1,15 @@
 <template>
    <div class="card cardpost" >
       <div class="card-header pl-0">
-    Bouzangad zakaria
+    {{post.postedBy.name}}
   </div>
-  <img src="https://images.unsplash.com/photo-1588870410947-895d92561635?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1220&q=80" class="card-img-top" alt="...">
+  <img :src="post.photo" class="card-img-top" alt="..." style="width:450px;height:450px">
   <div class="card-body">
     <span>
       <i class="fa fa-heart-o" aria-hidden="true"></i>
-    <h5 class="card-title">Poste title</h5>
+    <h5 class="card-title">{{post.title}}</h5>
     </span>
-    <p class="card-text">Some quick example text to build on the Poste title and make up the bulk of the card's content.</p>
+    <p class="card-text">{{post.body}}</p>
 
     <div class="input-group mb-3">
   <input type="text" class="form-control" placeholder="Comment ...." >
@@ -21,7 +21,16 @@
   </div>
 </div>
 </template>
-
+<script>
+export default {
+  props:{
+  post:{
+    type: Object,
+    required:true
+  }
+}
+}
+</script>
 <style scoped>
 .cardpost{
 border:none

@@ -1,25 +1,7 @@
 <template>
 <div class="row">
-  <div class="col-sm-6">
-    <Post></Post>
-  </div>
-  <div class="col-sm-6">
-    <Post></Post>
-  </div>
-  <div class="col-sm-6">
-    <Post></Post>
-  </div>
-  <div class="col-sm-6">
-    <Post></Post>
-  </div>
-  <div class="col-sm-6">
-    <Post></Post>
-  </div>
-  <div class="col-sm-6">
-    <Post></Post>
-  </div>
-  <div class="col-sm-6">
-    <Post></Post>
+  <div class="col-sm-6" v-for="post in posts" :key="post._id">
+    <Post :post="post"></Post>
   </div>
 </div>
 </template>
@@ -29,6 +11,12 @@ import Post from "~/components/Private/Post"
 export default {
 components :{
   Post
+},
+props:{
+  posts:{
+    type: Array,
+    required:true
+  }
 }
 }
 </script>
