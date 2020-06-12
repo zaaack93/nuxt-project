@@ -1,5 +1,5 @@
 <template>
-<div class="container pt-4">
+<div class="container pt-4 bg-secondary">
   <PostsList :posts="loadedPosts"></PostsList>
 </div>
 </template>
